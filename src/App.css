@@ -1,31 +1,43 @@
+/* General Styling */
 .App {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Parent header container */
+.App-header {
+  position: relative; /* Ensure the logo aligns relative to this container */
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: #9e15bf; /* Updated background color for the header */
+  color: white;
 }
 
+/* Home Page Rectangle Background */
+.home-content {
+  position: relative; /* Ensure the home-content is relative for pseudo-element positioning */
+  padding: 20px; /* Space inside the rectangle */
+  background-color: #4ac6d2; /* Light pastel background */
+  color: black;
+  border-radius: 8px; /* Rounded corners for the rectangle */
+}
+
+/* Logo Styling */
+.App-logo {
+  height: 10vmin; /* Adjust the size */
+  position: absolute; /* Position relative to the parent container */
+  top: 50px; /* Space from the top */
+  left: 1px; /* Space from the left */
+  pointer-events: none; /* Keep it non-interactive */
+}
+
+/* Rotate animation for the logo */
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
 }
 
 @keyframes App-logo-spin {
@@ -35,4 +47,224 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+/* Navbar Styling */
+nav {
+  background-color: #4ac6d2; /* Background color of the navbar */
+  padding: 10px;
+  position: fixed; /* Position fixed for persistent alignment */
+  top: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: center; /* Center the navbar horizontally */
+  width: 100%; /* Full width of the viewport */
+  border: 1.5px solid white; /* Border around the navbar */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional shadow for better visibility */
+}
+
+/* Adjust navbar for home page */
+.home-nav {
+  position: absolute;
+  top: 20px; /* Adjust as needed */
+  right: 20px; /* Adjust as needed */
+}
+
+/* Navbar Menu Styling */
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 20px; /* Space between items */
+}
+
+/* Navbar Items Styling */
+nav ul li {
+  cursor: pointer;
+  transition: color 0.3s ease, transform 0.3s ease;
+  color: black;
+}
+
+nav ul li:hover {
+  color: #9e15bf;
+  transform: scale(1.1);
+}
+
+/* Section Styling */
+.section {
+  height: 100vh;
+  padding: 50px;
+  background-color: #9e15bf; /* All sections with the same background color */
+  color: white; /* Ensuring text is visible against the dark background */
+  position: relative;
+  display: flex;
+  flex-direction: column; /* Arrange items in column */
+  align-items: center;
+  justify-content: center; /* Center content vertically */
+}
+
+/* Title Styling */
+.section-title {
+  margin-bottom: 20px; /* Space between title and content */
+  color: white; /* Font color for the title */
+  font-size: 2em; /* Adjust font size as needed */
+}
+
+/* Rectangle Styling */
+.rectangle {
+  width: 80%;
+  max-width: 800px; /* Adjust width as needed */
+  padding: 20px;
+  background-color: #4ac6d2;
+  border: 1.5px solid white; /* Border for the rectangle */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden; /* Ensure content stays within the rectangle */
+  transform: scale(0); /* Initial scale for animation */
+  animation: scaleIn 1s forwards; /* Animation for scaling in */
+}
+
+@keyframes scaleIn {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+.rectangle p {
+  color: black;
+}
+
+/* Remove the rectangle from Projects */
+#projects .rectangle {
+  display: none; /* Hide the rectangle specifically for the Projects section */
+}
+
+/* Rectangle Hover Effect */
+.project-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateX(10px) scale(1.05); /* Move the card to the right and slightly scale it up */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Add a shadow effect */
+}
+
+/* Divider Styling */
+.divider {
+  height: 1px; /* Thickness of the divider */
+  background-color: black; /* Color of the divider */
+  margin: 20px 0; /* Space above and below the divider */
+  width: 100%; /* Full width of the container */
+}
+
+/* Projects Container */
+.projects-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+  justify-content: center;
+}
+
+/* Project Card Styling */
+.project-card {
+  width: 300px; /* Adjust the width as needed */
+  padding: 20px;
+  border: 1.5px solid #ddd;
+  border-radius: 8px;
+  background-color: #4ac6d2; /* Background color for project cards */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.project-card h3 {
+  color: #c452e0; /* Change the color of the project title */
+}
+
+.project-card p {
+  color: black; /* Change the color of the project description */
+}
+
+.project-card a {
+  color: whitesmoke;
+  font-style: italic; /* Make the link text italic */
+}
+
+/* Contact Form Styling */
+.contact-form {
+  background-color: #4ac6d2; /* Light pastel background */
+  padding: 20px;
+  border-radius: 8px;
+  border: 1.5px solid #9e15bf; /* Border for the contact form */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center; /* Center align the form */
+}
+
+.contact-form p {
+  color: #9e15bf; /* Darker text for better readability */
+  margin-bottom: 15px;
+}
+
+.contact-form form {
+  display: inline-block; /* Ensure the form's elements align in the center */
+  text-align: center; /* Align form inputs inside the form */
+  width: 100%;
+}
+
+.contact-form div {
+  margin-bottom: 15px;
+}
+
+.contact-form label {
+  display: block;
+  font-weight: bold;
+  color: #9e15bf;
+  margin-bottom: 5px;
+}
+
+/* Change the color of the placeholder text */
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: #9e15bf; /* Light pastel purple for placeholders */
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 80%; /* Adjust this width as necessary */
+  padding: 10px;
+  border: 1px solid #9e15bf;
+  border-radius: 4px;
+  font-size: 16px;
+  margin: 0 auto; /* This ensures the input stays centered */
+  display: block; /* Make the input a block-level element */
+}
+
+.contact-form textarea {
+  resize: vertical;
+  height: 100px; /* Adjust height as needed */
+}
+
+.contact-form button {
+  background-color: #9e15bf; /* Pastel purple button */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.contact-form button:hover {
+  background-color: #56335f;
+}
+
+.contact-details p {
+  margin: 5px 0;
+  color: #9e15bf;
 }
